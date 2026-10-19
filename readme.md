@@ -2,4 +2,4 @@
 
 This game is written in HTML, CSS and JavaScript by AI Agent using Qwen Model.
 
-Play uisng this [Link](snake-game-html.pages.dev)
+Play uisng this [Link](https://snake-game-html.pages.dev)
