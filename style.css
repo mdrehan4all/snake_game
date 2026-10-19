@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    position: relative; /* Essential for absolute positioning of overlay */
+    text-align: center;
+    background: #16213e;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #0f3460;
+}
+
+.game-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: #e9ff60;
+}
+
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.score-board span {
+    background: #0f3460;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+}
+
+#gameCanvas {
+    border: 2px solid #e9ff60;
+    border-radius: 8px;
+    background: #0a0a1a;
+    display: block;
+    margin: 0 auto;
+    image-rendering: pixelated;
+}
+
+.controls p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #aaa;
+}
+
+#restartBtn {
+    margin-top: 0.8rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    background: #e9ff60;
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#restartBtn:hover {
+    background: #c73050;
+}
+
+#gameOverOverlay {
+    /* Fix: Use relative positioning within game-container and ensure it's on top */
+    position: absolute;
+    top: 6rem; /* Position over the canvas */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+    z-index: 100; /* Ensure overlay is above everything */
+    display: none;
+    /* Fix: Allow pointer events only when shown */
+    pointer-events: none;
+}
+
+#gameOverOverlay.show {
+    display: block;
+    pointer-events: auto;
+}
